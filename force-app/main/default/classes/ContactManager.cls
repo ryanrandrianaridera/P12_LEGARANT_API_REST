@@ -1,16 +1,28 @@
-@RestResource(urlMapping='/Contacts/v1/*')
-global with sharing class ContactManager {
+@RestResource(urlMapping='/Contact/v1/*')
+global with sharing class ContactManager {   
+    
+    @HttpGet
+    global static Contact getContactById() {
+        RestRequest request = RestContext.request;
+        // grab the caseId from the end of the URL
+        String contactId = request.requestURI.substring(
+            request.requestURI.lastIndexOf('/')+1);
+        Contact result =  [SELECT Salutation, FirstName, LastName, Email, Phone, Password__c
+                           FROM Contact
+                           WHERE Id = :contactId];
+        return result;
+    }
     
     @HttpPost
-    global static Id createNewContact(String FirstName, String LastName, String Password, String Phone, String Email) {
+    global static Id createNewContact(String Salutation, String FirstName, String LastName, String Password, String Phone, String Email) {
         
         // Retrieve list of Contacts based on Email
         List<Contact> contactList = [SELECT Id, Active__c FROM Contact WHERE Email =: Email] ;
-       
+        
         // Condition if list is not empty i.e. email exists in SFDC
         Contact ctc = (contactList != null && contactList.size() > 0 ) ? contactList[0]:null;
         if (ctc != null) {
-           
+            
             // Return the Contact Id
             return ctc.Id;
         }
@@ -20,7 +32,8 @@ global with sharing class ContactManager {
             
             // Creation of a new Contact
             Contact thisContact = new Contact(
-                Active__c = true,               
+                Active__c = true,
+                Salutation      = Salutation,
                 FirstName       = FirstName,
                 LastName        = LastName,
                 Password__c = Password,
@@ -35,7 +48,7 @@ global with sharing class ContactManager {
     }
     
     @HttpPut
-    global static Id updateContact(String FirstName, String LastName, String Password, String Phone, String Email){
+    global static Id updateContact(String Salutation, String FirstName, String LastName, String Password, String Phone, String Email){
         
         // Add the Contact Id as a parameter in the URL
         RestRequest request = RestContext.request;
@@ -44,7 +57,8 @@ global with sharing class ContactManager {
         // Retrieve the Contact based on the Id
         Contact result = [SELECT Id, Password__c, FirstName, LastName, Email, Phone FROM Contact WHERE Id = :id];
         Contact thisContact = new Contact(); 
-        thisContact.Id = id;      	
+        thisContact.Id = id; 
+        thisContact.Salutation = Salutation;
         thisContact.FirstName = FirstName;
         thisContact.LastName = LastName ;
         thisContact.Password__c = Password;        

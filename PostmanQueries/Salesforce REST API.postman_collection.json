@@ -1,0 +1,874 @@
+{
+	"info": {
+		"_postman_id": "be531d97-152b-4d55-85b4-779b3fe9812b",
+		"name": "Salesforce REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Services Sobject",
+			"item": [
+				{
+					"name": "Contact",
+					"item": [
+						{
+							"name": "Create Contact",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Salutation\": \"Ms.\",\r\n    \"FirstName\": \"Frite\",\r\n    \"LastName\": \"Smith \",\r\n    \"Email\": \"frite@smith.com\",\r\n    \"Phone\": \"9374748\",\r\n    \"Description\": \"Avoir ma frite\",\r\n    \"Password__c\": \"fritesmith76\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Contact",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"data",
+										"v53.0",
+										"sobjects",
+										"Contact"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Contact",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Contact/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"data",
+										"v53.0",
+										"sobjects",
+										"Contact",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0037Q000001x0FvQAI"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Contact",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Description\": \"Pas de pluie\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Contact/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"data",
+										"v53.0",
+										"sobjects",
+										"Contact",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0037Q000001x0FvQAI"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Contact",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Contact/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"data",
+										"v53.0",
+										"sobjects",
+										"Contact",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0037Q000001x0FvQAI"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Contract",
+					"item": [
+						{
+							"name": "Create Contract",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"AccountId\": \"0017Q000002wPSIQA2\",\r\n    \"StartDate\": \"2022-01-16\",\r\n    \"ContractTerm\": 8,\r\n    \"Status\": \"Draft\",\r\n    \"CompanySignedId\": \"0017Q000002yGiDQAU\",\r\n    \"CompanySignedDate\": \"2022-01-16\",\r\n    \"CustomerSignedId\": \"0037Q000001x0FvQAI\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Contract",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"data",
+										"v53.0",
+										"sobjects",
+										"Contract"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Contract",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Contract/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"data",
+										"v53.0",
+										"sobjects",
+										"Contract",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8007Q000000x4JoQAI"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Contract",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Contract/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"data",
+										"v53.0",
+										"sobjects",
+										"Contract",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8007Q000000x4JoQAI"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Contract",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Contract/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"data",
+										"v53.0",
+										"sobjects",
+										"Contract",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8007Q000000x4M4QAI"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "Create Account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\": \"Account Test Postman 170117\",\r\n    \"Phone\": null,\r\n    \"Fax\": null,\r\n    \"Website\": null,\r\n    \"Sic\": null,\r\n    \"Industry\": null,\r\n    \"AnnualRevenue\": null,\r\n    \"NumberOfEmployees\": null\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Account",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"data",
+										"v53.0",
+										"sobjects",
+										"Account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Account/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"data",
+										"v53.0",
+										"sobjects",
+										"Account",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0017Q000002yF0iQAE"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Account",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"AnnualRevenue\": 100000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Account/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"data",
+										"v53.0",
+										"sobjects",
+										"Account",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0017Q000002yF0iQAE"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Account",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Account/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"data",
+										"v53.0",
+										"sobjects",
+										"Account",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0017Q000002yF0iQAE"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ApexRest",
+			"item": [
+				{
+					"name": "Contact",
+					"item": [
+						{
+							"name": "Create Contact",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Salutation\": \"Ms.\",\r\n    \"FirstName\": \"Douadina\",\r\n    \"LastName\": \"Sankare \",\r\n    \"Email\": \"doudou@orange.ml\",\r\n    \"Phone\": \"99844884\",\r\n    \"Password\": \"doudou987\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/apexrest/Contact/v1/",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"apexrest",
+										"Contact",
+										"v1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Contact",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/apexrest/Contact/v1/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"apexrest",
+										"Contact",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0037Q000001x6mCQAQ"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Contact",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n    \"FirstName\": \"Mallorie\",\r\n    \"LastName\": \"Natafelle \",\r\n    \"Email\": \"mallo@riri.com\",\r\n    \"Phone\": \"086478\",\r\n    \"Password\": \"bibi\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/apexrest/Contact/v1/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"apexrest",
+										"Contact",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0037Q000001x6ldQAA"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Contract",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/apexrest/Contact/v1/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"apexrest",
+										"Contact",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0037Q000001x6ldQAA"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Contract",
+					"item": [
+						{
+							"name": "Create Contract",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"AccountId\": \"0017Q000002wPSIQA2\",\r\n    \"StartDate\": \"2022-01-17\",\r\n    \"ContractTerm\": 5,\r\n    \"Status\": \"Draft\",\r\n    \"Name\": \"Mickey Contract\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/apexrest/Contract/v1/",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"apexrest",
+										"Contract",
+										"v1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Contract",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/apexrest/Contract/v1/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"apexrest",
+										"Contract",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8007Q000000x4JoQAI"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Contract",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n    \"Status\": \"Draft\",   \r\n    \"AccountId\": \"0017Q000002wPSIQA2\",\r\n    \"StartDate\": \"2021-01-16\",\r\n    \"ContractTerm\": 6\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/apexrest/Contract/v1/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"apexrest",
+										"Contract",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "8007Q000000x4LzQAI"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "Create Account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Name\": \"Account Test Postman 2022\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/apexrest/Account/v1/",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"apexrest",
+										"Account",
+										"v1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/apexrest/Account/v1/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"apexrest",
+										"Account",
+										"v1",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0017Q000002yF0iQAE"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Account",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"Name\": \"Account Test Postman 2021\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/data/v53.0/sobjects/Account/:id",
+									"protocol": "https",
+									"host": [
+										"ryanrandriap12-dev-ed",
+										"my",
+										"salesforce",
+										"com"
+									],
+									"path": [
+										"services",
+										"data",
+										"v53.0",
+										"sobjects",
+										"Account",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0017Q000002yF0iQAE"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "client_authentication",
+				"value": "body",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "CCA52B93F824ADDDC77031EA055C24BF8D7964E30A1426D75D273D04567DC382\n",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "3MVG9t0sl2P.pBypVEbRlVF8B4tGnH0ZqRwz4LK88Q7sTBV1qLSX3KhrTaPOCEgr5NaDrlHKQJhBjiLFpOJHF",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/oauth2/token",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://ryanrandriap12-dev-ed.my.salesforce.com/services/oauth2/authorize",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "http://localhost:3000",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "Token Test Salesforce",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"value": ""
+		}
+	]
+}

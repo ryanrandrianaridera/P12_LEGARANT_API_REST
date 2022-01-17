@@ -1,5 +1,17 @@
-@RestResource(urlMapping='/Contracts/v1/*')
-global with sharing class ContractManager {
+@RestResource(urlMapping='/Contract/v1/*')
+global with sharing class ContractManager {  
+    @HttpGet
+    global static Contract getContractById() {
+        RestRequest request = RestContext.request;
+        // grab the caseId from the end of the URL
+        String contractId = request.requestURI.substring(
+            request.requestURI.lastIndexOf('/')+1);
+        Contract result =  [SELECT ContractNumber, AccountId, StartDate, EndDate, ContractTerm, Status, CustomerSignedId
+                            FROM Contract
+                            WHERE Id = :contractId];
+        return result;
+    }
+    
     
     @HttpPost
     global static Id createNewContract(String Name, String Status, Id AccountId, Date StartDate, Integer ContractTerm) {

@@ -1,5 +1,20 @@
 @isTest
 private class ContractManagerTest {    
+    @isTest static void testGetContractById() {
+        Id recordId = TestDataFactory.createAccountAndContractRecord();
+        // Set up a test request
+        RestRequest request = new RestRequest();
+        request.requestUri ='https://ryanrandriap12-dev-ed.lightning.force.com/services/apexrest/Contract/v1/'+ recordId;
+        request.httpMethod = 'GET';
+        RestContext.request = request;
+        // Call the method to test
+        Contract thisContract = ContractManager.getContractById();
+        // Verify results
+        System.assert(thisContract != null);
+        System.assertEquals('Draft', thisContract.Status);
+    }
+    
+    
     @isTest 
     static void testCreateNewContract() {
         
@@ -24,7 +39,7 @@ private class ContractManagerTest {
         // Set up a test request
         Id recordId = TestDataFactory.createAccountAndContractRecord();
         RestRequest request = new RestRequest();
-        request.requestURI = 'https://ryanrandriap12-dev-ed.lightning.force.com/services/apexrest/Contracts/v1/' + recordId;
+        request.requestURI = 'https://ryanrandriap12-dev-ed.lightning.force.com/services/apexrest/Contract/v1/' + recordId;
         request.httpMethod = 'PATCH';
         request.addHeader('Content-Type', 'application/json');
         request.requestBody = Blob.valueOf('{"Status":"Activated"}');
@@ -38,7 +53,7 @@ private class ContractManagerTest {
         
         // Retrieve Id & Status of the updated Contract
         Contract thisContract = [SELECT Id, Status FROM Contract WHERE Id=:thisContractId];
-       
+        
         // Verify the Status is equal to the updated Contract
         System.assertEquals(thisContract.Status, 'Activated'); 
     }      

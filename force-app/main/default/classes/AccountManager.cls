@@ -1,6 +1,18 @@
-@RestResource(urlMapping='/Accounts/v1/*')
+@RestResource(urlMapping='/Account/v1/*')
 
-global with sharing class AccountManager {
+global with sharing class AccountManager {   
+    @HttpGet
+    global static Account getAccountById() {
+        RestRequest request = RestContext.request;
+        // grab the caseId from the end of the URL
+        String AccountId = request.requestURI.substring(
+            request.requestURI.lastIndexOf('/')+1);
+        Account result =  [SELECT Name
+                           FROM Account
+                           WHERE Id = :AccountId];
+        return result;
+    }
+    
     @HttpPost
     global static Id createNewAccount(String Name) {
         // Creation of a new Account 

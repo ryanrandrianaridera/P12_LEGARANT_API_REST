@@ -1,5 +1,19 @@
 @isTest
 private class AccountManagerTest {
+    @isTest static void testGetAccountById() {
+        Id recordId = TestDataFactory.createAccount();
+        // Set up a test request
+        RestRequest request = new RestRequest();
+        request.requestUri ='https://ryanrandriap12-dev-ed.lightning.force.com/services/apexrest/Account/v1/'+ recordId;
+        request.httpMethod = 'GET';
+        RestContext.request = request;
+        // Call the method to test
+        Account thisAccount = AccountManager.getAccountById();
+        // Verify results
+        System.assert(thisAccount != null);
+        System.assertEquals('TestAccount', thisAccount.Name);
+    }
+    
     @isTest 
     static void testCreateNewAccount() {
         
@@ -18,7 +32,7 @@ private class AccountManagerTest {
         // Set up a test request
         Id recordId = createTestRecord();
         RestRequest request = new RestRequest();
-        request.requestURI = 'https://ryanrandriap12-dev-ed.lightning.force.com/services/apexrest/Accounts/v1/' + recordId;
+        request.requestURI = 'https://ryanrandriap12-dev-ed.lightning.force.com/services/apexrest/Account/v1/' + recordId;
         request.httpMethod = 'PUT';
         request.addHeader('Content-Type', 'application/json');
         request.requestBody = Blob.valueOf('{"Name":"TestAccountRESTUpdate"}');
